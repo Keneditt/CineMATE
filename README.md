@@ -1,2 +1,2 @@
-# CineMATE
-Movies/Series Streaming Service
+# CineMate Service
+JobSeeker Application
