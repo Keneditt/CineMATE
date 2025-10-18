@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'apps.messages',
     'apps.feed',
     'apps.common',
+    'decouple',
 ]
 
 MIDDLEWARE = [
