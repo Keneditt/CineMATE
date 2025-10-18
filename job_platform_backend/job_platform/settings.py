@@ -57,7 +57,7 @@ INSTALLED_APPS = [
     'apps.jobs',
     'apps.applications',
     'apps.follows',
-    'apps.messages',
+    'apps.chat',
     'apps.feed',
     'apps.common',
 ]
