@@ -11,7 +11,21 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 import os
 from pathlib import Path
-from decouple import config
+
+# Try to use python-decouple's config if available; otherwise fall back to environment variables.
+try:
+    from decouple import config  # type: ignore
+except Exception:
+    def config(key, default=None, cast=None):
+        value = os.environ.get(key, default)
+        if value is None:
+            return default
+        if cast:
+            try:
+                return cast(value)
+            except Exception:
+                return default
+        return value
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -47,7 +61,6 @@ INSTALLED_APPS = [
     'apps.messages',
     'apps.feed',
     'apps.common',
-    'decouple',
 ]
 
 MIDDLEWARE = [
