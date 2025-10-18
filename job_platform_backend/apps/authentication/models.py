@@ -13,5 +13,13 @@ class User(AbstractUser):
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
+    groups = models.ManyToManyField(
+        'auth.Group',
+        related_name='authentication_users_set',
+        blank=True,
+        help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
+        verbose_name='user permissions',
+    )
+
     def __str__(self):
         return self.email
