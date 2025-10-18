@@ -1,6 +1,6 @@
 from django.core.management.base import BaseCommand
 from apps.authentication.models import User
-from apps.messages.models import Message
+from apps.chat.models import Message
 
 class Command(BaseCommand):
     help = 'Test messaging system functionality'
