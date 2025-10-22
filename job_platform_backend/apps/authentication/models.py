@@ -18,7 +18,7 @@ class User(AbstractUser):
         related_name='authentication_users_set',
         blank=True,
         help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
-        verbose_name='user permissions',
+        verbose_name='groups',
     )
 
     def __str__(self):
