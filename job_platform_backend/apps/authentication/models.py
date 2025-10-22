@@ -23,3 +23,11 @@ class User(AbstractUser):
 
     def __str__(self):
         return self.email
+
+user_permissions = models.ManyToManyField(
+    'auth.Permission',
+    related_name='authentication_on_user_permissions',
+    blank=True,
+    help_text='Specific permissions for this user.',
+    verbose_name='user permissions',
+)
